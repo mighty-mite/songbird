@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/favicon.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Songbird</title>
+</head>
+<body>
+  <div class="center">
+<div class="start-page">
+    <h1>Welcome to the Birdsong Quizz!</h1>
+    <button class="start-btn">Start Game</button>
+    <div class="footer">
+      <a href="https://github.com/mighty-mite" class="mighty-mite" target="_blank">Mighty Mite</a>
+      <div class="year">2022</div>
+      <a target="_blank" class="school-link" href="https://rs.school/js/"><img src="./assets/rsschool.svg" alt="school logo" class="school-logo" width="200"></a>
+      
+    </div>
+  </div>
+  
+  <div class="game hidden">
+    <div class="top">
+      <img src="./assets/logo.svg" alt="" width="100">
+      <div class="score-wrapper">Score: <span class="score">0</span></div>
+    </div>
+    <ul class="nav">
+      <li class="nav-item current"><span>Разминка</span></li>
+      <li class="nav-item"><span>Воробьиные</span></li>
+      <li class="nav-item"><span>Лесные птицы</span></li>
+      <li class="nav-item"><span>Певчие птицы</span></li>
+      <li class="nav-item"><span>Хищные птицы</span></li>
+      <li class="nav-item"><span>Морские птицы</span></li>
+    </ul>
+    <div class="random">
+      <img src="./assets/unknown.jpg" alt="unknown bird" class="random__bird">
+      <div class="random__info">
+        <h3 class="random__name">*****</h3>
+        <div class="random__audio">
+
+          <div class="random__time">
+            <button class="random__play">
+              <img src="./assets/play.svg" width="30" alt="" class="play-btn">
+            </button>
+            <input type="range" min="0" max="100" class="random__timebar-audio" value="0"></input>
+          </div>
+          <div class="volume">
+            <button class="volume-btn">
+              <img src="./assets/volume.svg" width="30" alt="" class="play-btn">
+            </button>
+            <input type="range" class="volume-range" min="0" max="100" value="30">
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="list">
+      <li class="list__item"><span class="dot"></span><span class="bird-option">A</span></li>
+      <li class="list__item"><span class="dot"></span><span class="bird-option">B</span></li>
+      <li class="list__item"><span class="dot"></span><span class="bird-option">C</span></li>
+      <li class="list__item"><span class="dot"></span><span class="bird-option">D</span></li>
+      <li class="list__item"><span class="dot"></span><span class="bird-option">E</span></li>
+      <li class="list__item"><span class="dot"></span><span class="bird-option">F</span></li>
+    </ul>
+    <div class="card">
+      <p class="instructions">
+        Послушайте плеер<br>
+        Выберите птицу из списка
+      </p>
+      <div class="info hidden">
+        <img src="./assets/unknown.jpg" alt="bird" class="info__img" >
+        <ul class="info__list">
+          <li class="info__item-name">Ворон</li>
+          <li class="info__item-name-latin">Corvus corax</li>
+          <li class="info__item">
+            <img width="30" src="./assets/play.svg" alt="" class="info__play-btn">
+            <input  type="range" min="0" max="100" value="0" class="info__item-play-range">
+          </li>
+        </ul>
+        <p class="info__description">Description</p>
+      </div>
+    </div>
+    <button class="next inactive" disabled>Next Question</button>
+  </div>
+  <div class="results hidden">
+      <p class="results-text">Поздравляю! Вы набрали <span class="result-score"></span> баллов из 30</p>
+      <button type="button" class="start-game">Играть заново</button>
+    </div>
+  </div>
+  <script type="module" src="./js/index.js"></script>
+</body>
+</html>
