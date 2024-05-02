@@ -1,0 +1,417 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+input {
+  cursor: pointer;
+}
+
+body {
+  background-color: rgb(34, 33, 33);
+  color: white;
+  font-size: 18px;
+  height: 100vh;
+}
+
+h1 {
+  margin-top: 200px;
+  text-align: center;
+}
+
+.start-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.start-page.hidden {
+  display: none;
+}
+
+.start-btn {
+  background-color: #00bc8c;
+  padding: 30px;
+  border-radius: 5px;
+  margin-bottom: 200px;
+}
+
+.center {
+  margin: 0 auto;
+  width: 80%
+}
+
+.game {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  grid-template-areas: 
+  'top top'
+  'nav nav'
+  'random random'
+  'list info'
+  'next next';
+
+}
+
+.game.hidden {
+  display: none;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+  grid-area: top;
+}
+
+
+button {
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+}
+
+.nav {
+  list-style: none;
+  background-color:#008966;
+  display: flex;
+  border-radius: 5px;
+  grid-area: nav;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav-item {
+  width: 16.6666%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.nav-item.current {
+  background-color:rgb(29, 199, 145)
+}
+
+.random {
+  background-color: #303030;
+  display: flex;
+  padding: 20px;
+  border-radius: 5px;
+  grid-area: random;
+  /* justify-content: space-between; */
+}
+
+.random__bird {
+  margin-right: 20px;
+  border-radius: 5px;
+}
+
+.random__info {
+  width: 100%
+}
+
+.random__name {
+  text-align: center;
+  margin-bottom: 10px
+}
+
+.random__play {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px
+}
+
+.random__time {
+  width: 100%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px
+}
+
+.volume {
+  display: flex;
+  align-items: center;
+}
+
+.volume-btn {
+  margin-right: 20px;
+  margin-left: 7px;
+}
+
+.random__timebar-audio {
+  width: 100%;
+  background: linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140) 0%, rgb(115, 115, 115) 0%, rgb(115, 115, 115) 100%);
+  height: 4px;
+  appearance: none;
+  transition: all 1s ease-in-out;
+}
+
+
+.volume-range {
+  width: 20%;
+  background: linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140) 0%, rgb(115, 115, 115) 0%, rgb(115, 115, 115) 100%);
+  height: 4px;
+  appearance: none;
+  transition: all 1s ease-in-out;
+}
+
+.random__timebar-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  margin-top: 10px
+}
+
+.list {
+  background-color: #303030;
+  grid-area: list;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.list__item {
+  padding: 0.85rem 1.25rem;
+  background-color: #303030;
+  border-left: 1px solid #555;
+  border-top: 1px solid #555;
+  border-right: 1px solid #555;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.list__item:last-child {
+  border-bottom: 1px solid #555;
+}
+
+.list__item:hover {
+  background-color: #444;
+}
+
+.list__item .dot.error {
+  background-color: red;
+}
+
+.list__item .dot.right {
+  background-color:rgb(0, 188, 140)
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 15px;
+  border-radius: 50%;
+  -webkit-transition: .1s;
+  transition: .1s;
+  background-color: #444;
+  margin-right: 15px;
+}
+
+.instructions.hidden {
+  display: none;
+}
+
+.card {
+  grid-area: info;
+  border-radius: 5px;
+  background-color: #303030;
+  padding: 20px;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  'img name'
+  'description description';
+  grid-gap: 20px;
+  
+}
+
+.info.hidden {
+  display: none;
+}
+
+.info__img {
+  grid-area: img;
+  border-radius: 5px;
+
+  width: 200px;
+  height: 155px;
+  object-fit: cover;
+  justify-self: center;
+}
+
+.info__list {
+  grid-area: name;
+}
+
+.info__item:nth-child(3) {
+  display: flex;
+  align-items: center;
+}
+
+.info__play-btn {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.info__item-play-range {
+  width: 100%;
+  background: linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140) 0%, rgb(115, 115, 115) 0%, rgb(115, 115, 115) 100%);
+  height: 4px;
+  appearance: none;
+}
+
+.info__description {
+  grid-area: description;
+  word-wrap: break-word
+}
+
+.info__item-name,
+.info__item-name-latin {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.next {
+  grid-area: next;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.next {
+  background-color:rgb(0, 188, 140)
+}
+
+.next.inactive {
+  background-color: #303030;
+}
+
+.results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh
+}
+
+.results.hidden {
+  display: none;
+}
+
+.results-text {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.start-game {
+  width: 100%;
+  background-color: #00bc8c;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 16px
+}
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.mighty-mite {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.mighty-mite:hover {
+  color:rgb(0, 188, 140)
+}
+
+.year {
+  font-size: 24px;
+}
+
+@media (max-width: 1000px) {
+  body {
+    font-size: 16px;
+  }
+
+  .game {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        'top'
+        'nav'
+        'random'
+        'list'
+        'info'
+        'next';
+  }
+
+  .results-text {
+    font-size: 20px;
+}
+}
+
+@media (max-width: 870px) {
+  body {
+    font-size: 14px;
+  }
+
+  .school-logo {
+    width: 100px
+  }
+
+  .year {
+    font-size: 16px;
+  }
+
+  .mighty-mite {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 800px) {
+  .nav-item {
+    width: 105px;
+  }
+
+  img.random__bird {
+    width: 40%;
+    height: auto;
+  }
+
+  .info__img {
+    width: 100%;
+    height: auto;
+  }
+
+  .volume-range {
+    width: 40%
+  }
+
+}
